@@ -1,7 +1,7 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { RESUME_DATA } from '../constants';
-import { ExternalLink, FolderCode, Github, Globe, ArrowRight } from 'lucide-react';
+import { ExternalLink, FolderCode, Github, Globe, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface ProjectsProps {
   onViewAll?: () => void;
@@ -9,6 +9,7 @@ interface ProjectsProps {
 }
 
 const Projects: React.FC<ProjectsProps> = ({ onViewAll, featuredOnly = true }) => {
+  const [galleryState, setGalleryState] = useState<{images: string[], currentIndex: number} | null>(null);
   const displayedProjects = featuredOnly 
     ? RESUME_DATA.projects.slice(0, 2) 
     : RESUME_DATA.projects;
@@ -82,19 +83,17 @@ const Projects: React.FC<ProjectsProps> = ({ onViewAll, featuredOnly = true }) =
                   <div className="mb-8 overflow-x-auto pb-2 flex-grow">
                     <div className="flex gap-3 w-max">
                       {project.images.map((img, idx) => (
-                        <a 
+                        <button 
                           key={idx} 
-                          href={img} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="block w-40 h-24 sm:w-48 sm:h-28 rounded-lg overflow-hidden border border-gray-700/50 flex-shrink-0 hover:border-indigo-500 transition-colors"
+                          onClick={() => setGalleryState({images: project.images!, currentIndex: idx})}
+                          className="block w-40 h-24 sm:w-48 sm:h-28 rounded-lg overflow-hidden border border-gray-700/50 flex-shrink-0 hover:border-indigo-500 transition-colors focus:outline-none"
                         >
                            <img 
                              src={img} 
                              alt={`${project.title} screenshot ${idx + 1}`} 
                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                            />
-                        </a>
+                        </button>
                       ))}
                     </div>
                   </div>
@@ -140,6 +139,63 @@ const Projects: React.FC<ProjectsProps> = ({ onViewAll, featuredOnly = true }) =
           </div>
         )}
       </div>
+
+      {/* Image Modal (Lightbox) */}
+      {galleryState && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 animate-in fade-in duration-300" 
+          onClick={() => setGalleryState(null)}
+        >
+          <button 
+            className="absolute top-6 right-6 text-white hover:text-indigo-400 bg-gray-900/50 hover:bg-gray-800 rounded-full p-2 transition-colors z-[60]"
+            onClick={(e) => { e.stopPropagation(); setGalleryState(null); }}
+          >
+            <X size={28} />
+          </button>
+
+          {galleryState.images.length > 1 && (
+            <>
+              <button 
+                className="absolute left-4 md:left-12 top-1/2 -translate-y-1/2 text-white hover:text-indigo-400 bg-gray-900/50 hover:bg-gray-800 rounded-full p-3 transition-colors z-[60]"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setGalleryState(prev => prev ? {
+                    ...prev,
+                    currentIndex: prev.currentIndex === 0 ? prev.images.length - 1 : prev.currentIndex - 1
+                  } : null);
+                }}
+              >
+                <ChevronLeft size={32} />
+              </button>
+              
+              <button 
+                className="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 text-white hover:text-indigo-400 bg-gray-900/50 hover:bg-gray-800 rounded-full p-3 transition-colors z-[60]"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setGalleryState(prev => prev ? {
+                    ...prev,
+                    currentIndex: prev.currentIndex === prev.images.length - 1 ? 0 : prev.currentIndex + 1
+                  } : null);
+                }}
+              >
+                <ChevronRight size={32} />
+              </button>
+            </>
+          )}
+
+          <img 
+            key={galleryState.currentIndex}
+            src={galleryState.images[galleryState.currentIndex]} 
+            alt={`Gallery view ${galleryState.currentIndex + 1}`} 
+            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-[0_0_50px_rgba(0,0,0,0.5)] animate-in zoom-in-95 duration-300" 
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 bg-gray-900/50 rounded-full text-white/80 text-sm font-medium tracking-widest z-[60]">
+            {galleryState.currentIndex + 1} / {galleryState.images.length}
+          </div>
+        </div>
+      )}
     </section>
   );
 };
