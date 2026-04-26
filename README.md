@@ -1,20 +1,23 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Karan Singh Bohra - Portfolio
 
-# Run and deploy your AI Studio app
+Welcome to my personal portfolio repository! This project showcases my skills, experience, and the software development projects I have built.
 
-This contains everything you need to run your app locally.
+## Tech Stack
+- **Framework:** React + Vite
+- **Styling:** Tailwind CSS
+- **Icons:** Lucide React
 
-View your app in AI Studio: https://ai.studio/apps/temp/1
+## Running Locally
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/bohrakaran/portfolio.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
