@@ -6,6 +6,7 @@ export interface Project {
   points: string[];
   demoUrl?: string;
   sourceUrl?: string;
+  images?: string[];
 }
 
 export interface SkillCategory {

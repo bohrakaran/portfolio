@@ -69,7 +69,7 @@ const Projects: React.FC<ProjectsProps> = ({ onViewAll, featuredOnly = true }) =
                   {project.description}
                 </p>
 
-                <div className="space-y-3 mb-8">
+                <div className="space-y-3 mb-6">
                   {project.points.map((point, pIdx) => (
                     <div key={pIdx} className="flex gap-3 text-sm text-gray-400">
                       <span className="text-indigo-500 mt-1">•</span>
@@ -77,6 +77,28 @@ const Projects: React.FC<ProjectsProps> = ({ onViewAll, featuredOnly = true }) =
                     </div>
                   ))}
                 </div>
+
+                {project.images && (
+                  <div className="mb-8 overflow-x-auto pb-2 flex-grow">
+                    <div className="flex gap-3 w-max">
+                      {project.images.map((img, idx) => (
+                        <a 
+                          key={idx} 
+                          href={img} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="block w-40 h-24 sm:w-48 sm:h-28 rounded-lg overflow-hidden border border-gray-700/50 flex-shrink-0 hover:border-indigo-500 transition-colors"
+                        >
+                           <img 
+                             src={img} 
+                             alt={`${project.title} screenshot ${idx + 1}`} 
+                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                           />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 <div className="flex flex-wrap items-center justify-between gap-4 mt-auto pt-6 border-t border-gray-800">
                   <div className="flex flex-wrap gap-2">

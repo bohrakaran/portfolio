@@ -48,7 +48,8 @@ export const RESUME_DATA = {
         "Built a full-stack project management system using React, Node.js, and MongoDB for tracking tasks.",
         "Implemented secure authentication and role-based access using JWT.",
         "Designed REST APIs for project and task management and integrated them with a responsive React frontend."
-      ]
+      ],
+      images: ['/dashboard.png', '/projects.png', '/setting.png', '/task.png', '/team.png']
     },
     {
       title: "ChatGPT Token Analyzer",
