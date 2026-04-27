@@ -5,7 +5,7 @@ Welcome to my professional portfolio! This project is a highly responsive, moder
 ![Portfolio Banner](https://github.com/bohrakaran/portfolio/raw/master/public/profile.jpg)
 
 ## 🌐 Live Demo
-Check out the live site here: **[Live Portfolio](https://portfolio-three-beige-95.vercel.app/)** *(Replace with your actual deployment link)*
+Check out the live site here: **[Live Portfolio](https://bohrakaran.github.io/portfolio/)** *(Replace with your actual deployment link)*
 
 ## ✨ Key Features
 - **Modern UI/UX**: Clean, dark-themed design with premium indigo accents.
