@@ -1,0 +1,65 @@
+<h1 align="center">KARAN SINGH BOHRA</h1>
+<h3 align="center">Full Stack Web Developer</h3>
+
+<p align="center">
+📧 karanbohra1112@gmail.com | 📱 +91-8273645640 | 🌍 Uttarakhand, India<br>
+🔗 <a href="https://www.linkedin.com/in/karan-singh-bohra">LinkedIn</a> | 🐙 <a href="https://github.com/bohrakaran">GitHub</a> | 🌐 <a href="https://portfolio-three-beige-95.vercel.app/">Portfolio</a>
+</p>
+
+---
+
+## SUMMARY
+Results-oriented Full Stack Web Developer proficient in the MERN stack and Python. Experienced in building scalable web applications, RESTful APIs, and AI-integrated tools like token usage dashboards. Passionate about writing clean code, optimizing performance, and applying technical expertise to solve complex real-world challenges.
+
+---
+
+## TECHNICAL SKILLS
+- **Programming Languages:** Python, Java, C/C++, JavaScript, SQL
+- **Frontend Development:** HTML5, CSS3, React.js, Tailwind CSS
+- **Backend Development:** Node.js, Express.js, REST APIs, JWT Authentication
+- **Databases:** MySQL, MongoDB
+- **AI / Emerging Tech:** Machine Learning, LLM Prompting, tiktoken, OLLAMA
+- **Tools & Platforms:** Git, GitHub, VS Code, Linux, Figma
+- **Core Concepts:** Data Structures & Algorithms, OOP, DBMS, Operating Systems, Computer Networks
+
+---
+
+## PROJECTS
+
+### Timely – Project Management System
+*React, Node.js, MongoDB, JWT* | [GitHub Repo](https://github.com/bohrakaran/Project-Management) | [Live Demo](https://timely-chi-sand.vercel.app/)
+- Built and deployed a full-stack project management application to streamline task tracking and team collaboration.
+- Designed and integrated RESTful APIs serving multiple endpoints, enabling seamless project and task management with a responsive React frontend.
+- Implemented secure user authentication and role-based access control using JWT, enhancing data security.
+
+### ChatGPT Token Usage Analyzer Dashboard
+*Python, FastAPI, tiktoken, OLLAMA, React.js* | [GitHub Repo](https://github.com/bohrakaran/token-analyzer) | [Live Demo](https://token-analyzer-one.vercel.app/)
+- Developed a FastAPI-based analytics dashboard to track ChatGPT API token usage and accurately estimate operational costs.
+- Engineered Python-based tokenization logic for parsing prompts and responses, optimizing data processing for large inputs.
+- Integrated a scalable React.js frontend to visualize usage metrics, helping users optimize their LLM expenditures.
+
+---
+
+## EXPERIENCE / TRAINING
+
+### Python Programming Intern
+**CodSoft** | *June 2025 – July 2025*
+- Developed efficient Python scripts utilizing Object-Oriented Programming (OOP), complex data structures, and file handling techniques.
+- Resolved real-world problem statements, significantly improving debugging capabilities and code reliability.
+- Applied clean code principles and refactored legacy code, optimizing overall script execution performance.
+
+---
+
+## EDUCATION
+
+### B.Tech in Computer Science Engineering
+**Uttarakhand Technical University** | *2022 – 2026*
+- **CGPA:** 6.1/10
+- **Relevant Coursework:** Data Structures, Algorithms, Database Management, Operating Systems
+
+---
+
+## CERTIFICATIONS
+- **Python Certification** – FreeCodeCamp (2026)
+- **Machine Learning for Data Science Projects** – IBM SkillsBuild (2026)
+- **Python Programming Internship** – CodSoft (2025)

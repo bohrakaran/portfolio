@@ -55,12 +55,13 @@ export const RESUME_DATA = {
       title: "ChatGPT Token Analyzer",
       description: "A tool to track and analyse ChatGPT token usage and estimate costs.",
       skills: ["Python", "FastAPI", "tiktoken", "React.js"],
-      demoUrl: "https://token-analyzer.vercel.app",
+      demoUrl: "https://token-analyzer-one.vercel.app/",
       sourceUrl: "https://github.com/bohrakaran/token-analyzer",
       points: [
         "Built a FastAPI-based tool to track and analyse ChatGPT token usage and estimate API costs.",
         "Implemented python tokenization logic for prompts and responses plus scalable dashboard integration."
-      ]
+      ],
+      images: ['/one.png', '/two.png', '/three.png', '/four.png', '/five.png']
     },
     
       

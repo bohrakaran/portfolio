@@ -1,13 +1,15 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { RESUME_DATA } from '../constants';
-import { Award, Trophy, CheckCircle2, ShieldCheck, ExternalLink } from 'lucide-react';
+import { Award, Trophy, CheckCircle2, ShieldCheck, ExternalLink, X, ArrowLeft } from 'lucide-react';
 
 interface CertificationsProps {
   isFullPage?: boolean;
 }
 
 const Certifications: React.FC<CertificationsProps> = ({ isFullPage = false }) => {
+  const [viewingCert, setViewingCert] = useState<string | null>(null);
+
   return (
     <section id="certifications" className={`${isFullPage ? 'py-10' : 'py-20'} px-4`}>
       <div className="max-w-7xl mx-auto">
@@ -43,14 +45,12 @@ const Certifications: React.FC<CertificationsProps> = ({ isFullPage = false }) =
               <div className="flex items-center justify-between mt-6 pt-6 border-t border-gray-800">
                 <div className="text-gray-500 text-xs uppercase tracking-widest font-bold">{cert.year}</div>
                 {cert.certificateUrl ? (
-                  <a 
-                    href={cert.certificateUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                  <button 
+                    onClick={() => setViewingCert(cert.certificateUrl!)}
                     className="flex items-center gap-1 text-xs text-indigo-400 font-bold hover:text-indigo-300 transition-colors group/link"
                   >
                     View Certificate <ExternalLink size={12} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                  </a>
+                  </button>
                 ) : (
                   <div className="flex items-center gap-1 text-xs text-indigo-400 font-bold cursor-default">
                     Verified <ExternalLink size={12} />
@@ -118,6 +118,59 @@ const Certifications: React.FC<CertificationsProps> = ({ isFullPage = false }) =
           </div>
         )}
       </div>
+
+      {/* Certificate Modal */}
+      {viewingCert && (
+        <div className="fixed inset-0 z-[100] flex flex-col bg-[#020617]/98 animate-in fade-in duration-300 backdrop-blur-sm">
+          {/* Enhanced Header */}
+          <div className="flex items-center justify-between p-4 md:px-8 md:py-5 bg-gray-900/40 border-b border-white/5">
+            <button 
+              onClick={() => setViewingCert(null)}
+              className="flex items-center gap-3 text-gray-300 hover:text-indigo-400 transition-all group"
+            >
+              <div className="p-2 bg-white/5 rounded-full group-hover:bg-indigo-500/10 transition-colors">
+                <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
+              </div>
+              <span className="font-bold text-sm md:text-base tracking-tight">Back to Gallery</span>
+            </button>
+            
+            <button 
+              onClick={() => setViewingCert(null)}
+              className="p-2.5 text-gray-400 hover:text-white bg-white/5 hover:bg-red-500/20 rounded-full transition-all"
+              title="Close Viewer"
+            >
+              <X size={22} />
+            </button>
+          </div>
+          
+          {/* Main Content Area */}
+          <div className="flex-1 overflow-hidden flex items-center justify-center p-2 sm:p-6 md:p-10">
+            <div className="w-full h-full max-w-6xl flex flex-col items-center justify-center relative">
+              {/* Decorative background glow */}
+              <div className="absolute inset-0 bg-indigo-500/5 blur-[100px] -z-10 rounded-full"></div>
+              
+              <div className="w-full h-full bg-black/20 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/5 relative">
+                <iframe 
+                  src={`${viewingCert}#toolbar=0&navpanes=0&view=FitH`} 
+                  className="w-full h-full border-none"
+                  title="Certificate Viewer"
+                ></iframe>
+                
+                {/* Loader or fall-back info (invisible but helpful for accessibility) */}
+                <div className="absolute inset-0 -z-20 flex items-center justify-center text-gray-600">
+                  Loading certificate...
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="py-4 text-center bg-gray-900/20 border-t border-white/5">
+            <p className="text-gray-500 text-xs font-medium tracking-widest uppercase">
+              Official Verified Document
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
