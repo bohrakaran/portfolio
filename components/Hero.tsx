@@ -76,7 +76,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             <div className="relative w-full h-full rounded-full border-4 border-indigo-500/30 p-4 overflow-hidden shadow-2xl bg-gray-900/40 backdrop-blur-sm group transition-transform duration-500 hover:scale-[1.02]">
               <div className="w-full h-full rounded-full overflow-hidden border-2 border-indigo-500/50 flex items-center justify-center bg-gray-800">
                 <img 
-                  src="profile.jpg" 
+                  src="./profile.jpg" 
                   alt={RESUME_DATA.name} 
                   className="w-full h-full object-cover object-[35%_top] rounded-full transition-transform duration-700 group-hover:scale-105"
                 />
