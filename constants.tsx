@@ -49,7 +49,7 @@ export const RESUME_DATA = {
         "Implemented secure authentication and role-based access using JWT.",
         "Designed REST APIs for project and task management and integrated them with a responsive React frontend."
       ],
-      images: ['/dashboard.png', '/projects.png', '/setting.png', '/task.png', '/team.png']
+      images: ['dashboard.png', 'projects.png', 'setting.png', 'task.png', 'team.png']
     },
     {
       title: "ChatGPT Token Analyzer",
@@ -61,7 +61,7 @@ export const RESUME_DATA = {
         "Built a FastAPI-based tool to track and analyse ChatGPT token usage and estimate API costs.",
         "Implemented python tokenization logic for prompts and responses plus scalable dashboard integration."
       ],
-      images: ['/one.png', '/two.png', '/three.png', '/four.png', '/five.png']
+      images: ['one.png', 'two.png', 'three.png', 'four.png', 'five.png']
     },
     
       
@@ -79,9 +79,9 @@ export const RESUME_DATA = {
     }
   ] as Experience[],
   certifications: [
-    { title: "Python Certification", issuer: "Freecodecamp", year: "2026", certificateUrl: "/FreeCodeCamp.pdf" },
+    { title: "Python Certification", issuer: "Freecodecamp", year: "2026", certificateUrl: "FreeCodeCamp.pdf" },
     { title: "Machine Learning for Data Science Projects", issuer: "IBM SkillsBuild", year: "2026" },
-    { title: "Python Programming Internship", issuer: "CodSoft", year: "2025", certificateUrl: "/CodSoft.pdf" }
+    { title: "Python Programming Internship", issuer: "CodSoft", year: "2025", certificateUrl: "CodSoft.pdf" }
   ] as Certification[],
   hobbies: ["Playing Football", "Coding"]
 };
