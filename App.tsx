@@ -81,7 +81,7 @@ const App: React.FC = () => {
                 <h2 className="text-3xl font-bold mb-8">Certifications</h2>
                 <button 
                   onClick={() => setView('certifications')}
-                  className="px-8 py-3 bg-gray-900 border border-gray-800 rounded-xl hover:bg-indigo-600 transition-all"
+                  className="px-8 py-3 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-xl active:scale-95"
                 >
                   View All Certifications
                 </button>

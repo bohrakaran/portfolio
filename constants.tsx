@@ -10,6 +10,7 @@ export const RESUME_DATA = {
     location: "Uttarakhand, India",
     linkedin: "https://www.linkedin.com/in/karan-singh-bohra",
     github: "https://github.com/bohrakaran",
+    resume: "./KaranResume.pdf",
   },
   summary: "Computer Science professional with a strong foundation in programming, web development, and analytics. Skilled in building projects end-to-end and eager to apply technical expertise to solve real-world challenges.",
   education: [

@@ -131,7 +131,7 @@ const Projects: React.FC<ProjectsProps> = ({ onViewAll, featuredOnly = true }) =
           <div className="mt-16 text-center">
             <button 
               onClick={onViewAll}
-              className="group inline-flex items-center gap-2 px-8 py-4 bg-gray-900 border border-gray-800 text-white rounded-2xl font-bold hover:bg-indigo-600 hover:border-indigo-600 transition-all shadow-xl"
+              className="group inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 text-white rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-xl active:scale-95"
             >
               Explore Full Gallery
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />

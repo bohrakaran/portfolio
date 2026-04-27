@@ -60,12 +60,21 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             >
               <Linkedin size={24} className="text-gray-300 group-hover:text-white" />
             </a>
-            <button 
-              onClick={() => onNavigate('#projects')}
-              className="px-8 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] active:scale-95 transition-transform"
-            >
-              View Projects
-            </button>
+            <div className="flex flex-wrap gap-4">
+              <button 
+                onClick={() => onNavigate('#projects')}
+                className="px-8 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] active:scale-95"
+              >
+                View Projects
+              </button>
+              <a 
+                href={RESUME_DATA.contact.resume}
+                download
+                className="flex items-center gap-2 px-8 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] active:scale-95"
+              >
+                Resume
+              </a>
+            </div>
           </div>
         </div>
 
